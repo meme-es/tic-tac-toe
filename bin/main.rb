@@ -1,3 +1,14 @@
+class Player
+  attr_reader :character
+  attr_reader :name
+  attr_accessor :score
+
+  def initialize(name, character)
+    @name = name
+    @character = character
+  end
+end
+
 class UserInterface
   def start
     player1 = new_player(nil, 'first')
@@ -6,7 +17,7 @@ class UserInterface
     loop do
       loop do
         Gem.win_platform? ? (system 'cls') : (system 'clear')
-        puts "Turn of #{current.name}(#{current.character})".blue
+        puts "Turn of #{current.name}(#{current.character})"
         number = choose_number
         puts "The Number chosen is: #{number}"
         # here the logic of the game:
@@ -41,7 +52,7 @@ class UserInterface
       new_name = gets.chomp
 
       if !player.nil? && new_name.eql?(player.name)
-        puts 'The name you entered is already taken so...'.yellow
+        puts 'The name you entered is already taken so...'
         next
       end
 
@@ -88,6 +99,15 @@ class UserInterface
   end
 
   def error_message
-    print "Sorry I didn't get you right...\n".red
+    print "Sorry I didn't get you right...\n"
   end
 end
+
+class String
+  def integer?
+    to_i.to_s == self
+  end
+end
+
+interface = UserInterface.new
+interface.start
