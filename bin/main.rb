@@ -1,4 +1,33 @@
 class UserInterface
+  def start
+    player1 = new_player(nil, 'first')
+    player2 = new_player(player1, 'second')
+    current = player1
+    loop do
+      loop do
+        Gem.win_platform? ? (system 'cls') : (system 'clear')
+        puts "Turn of #{current.name}(#{current.character})".blue
+        number = choose_number
+        puts "The Number chosen is: #{number}"
+        # here the logic of the game:
+        # ObjectGame.taken?(number)
+        # ObjectGame.move(current, number)
+
+        current = current == player1 ? player2 : player1
+        # game_ended = objectGame.ended?
+        # puts ObjectGame.result
+        # next is just to end the game, for now
+        game_ended = number == 9
+
+        break if game_ended
+      end
+
+      break unless keep_playing
+    end
+  end
+
+  private
+
   def new_player(player, nth_player)
     the_name = choose_name(player, nth_player)
     the_symbol = choose_symbol(player)
