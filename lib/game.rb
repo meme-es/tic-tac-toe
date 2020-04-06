@@ -19,7 +19,7 @@ class Game
     @board[index[0]][index[1]] = player.character
     @moves += 1
 
-    if @moves.between?(6, 8) && winer?(player, index)
+    if @moves.between?(6, 8) && winner?(player, index)
       @ended = true
       player.score += 1
       @result = "Game over: #{player.name} with symbol #{player.character} has won"
@@ -29,13 +29,33 @@ class Game
     end
   end
 
+  def board
+    str = "\n -------------\n"
+    (0..2).each do |row|
+      (0..2).each do |column|
+        tmp = @board[row][column]
+        str += if tmp.nil?
+                 ' | ' + (3 * row + column + 1).to_s
+               else
+                 ' | ' + tmp
+               end
+      end
+      str += " |\n -------------\n"
+    end
+    str += "\n"
+  end
+
+  def ended?
+    @ended
+  end
+
   private
 
   def map(num)
     [(num - 1) / 3, (num - 1) % 3]
   end
 
-  def winer?(player, index)
+  def winner?(player, index)
     tmp_array = @board[index[0]]
     return true if tmp_array.all? { |item| item == player.character }
 
