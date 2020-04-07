@@ -20,14 +20,9 @@ class UserInterface
         puts "Turn of #{current.name}(#{current.character})"
         number = choose_number
         puts "The Number chosen is: #{number}"
-        # here the logic of the game:
-        # ObjectGame.taken?(number)
-        # ObjectGame.move(current, number)
 
         current = current == player1 ? player2 : player1
-        # game_ended = objectGame.ended?
-        # puts ObjectGame.result
-        # next is just to end the game, for now
+
         game_ended = number == 9
 
         break if game_ended
