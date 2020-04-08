@@ -17,7 +17,7 @@ class Game
     @board[index[0]][index[1]] = player.character
     @moves += 1
 
-    if @moves.between?(6, 9) && winner?(player, index)
+    if @moves.between?(5, 9) && winner?(player, index)
       @ended = true
       player.score += 1
       @result = "Game over: #{player.name} with symbol #{player.character} has won"
