@@ -1,6 +1,5 @@
 class Game
   attr_reader :result
-  
 
   def initialize
     @moves = 0
