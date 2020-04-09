@@ -27,7 +27,15 @@ In order to run this game, you need to:
 ### Winning/Losing
 The possible winning options are having 3 of your inputs on:
 - Bottom part of the table
-Once you have Ruby installed you can run one of the following commands.
+- Upper part of the table
+- Left part of the table
+- Right part of the table
+- Diagonal left of the table
+- Diagonal right of the table
+- (Top/botton)/ (bottom/up) center part of the table
+- (Left/Right)/ (Right/Left) center part of the table
+
+Any thing out of these is a loss
 
 ## Authors
 
