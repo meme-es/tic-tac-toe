@@ -20,7 +20,13 @@ In order to run this game, you need to:
 - Install the game using the main executble file
 - Two players
 ### Playing Tic-Tac-Toe
-- The game will promp
+- The game will prompt the first player in put their character ie "X" or "O" which is in this case termed as a move
+- The second user will be prompted to
+- The use will do this over and over until they have 3 inputs on a single line
+
+### Winning/Losing
+The possible winning options are having 3 of your inputs on:
+- Bottom part of the table
 Once you have Ruby installed you can run one of the following commands.
 
 ## Authors
