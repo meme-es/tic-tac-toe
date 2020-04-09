@@ -1,5 +1,8 @@
+require './lib/game'
+require './lib/player'
+
 class UserInterface
-  def start_game
+  def play
     player1 = new_player(nil, 'first')
     player2 = new_player(player1, 'second')
     current = player1
