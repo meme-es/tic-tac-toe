@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-> This is an implementation the Tic-Tac-Toe gane in Ruby, in addition, it is going to be implemented in 4 phases:
+> This is an implementation of the Tic-Tac-Toe gamee in Ruby, in addition, it is has been implemented in 4 phases:
 - Project setup
 - User interface
 - Game logic
@@ -10,7 +10,8 @@ The game that is commony known as a Noughts and crosses"or Xs and Os is a paper-
 ## Built With
 
 - Ruby
-
+    - Following OOP
+    - Use of existing created classes and methods
 ### Prerequisites
 
 In order to run this game, you need to:
