@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require './lib/userinterface'
+
+interface = UserInterface.new
+interface.play
