@@ -7,7 +7,7 @@
 
 The game that is commony known as a Noughts and crosses"or Xs and Os is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
-## Built With
+### Built With
 
 - Ruby
     - Following OOP
@@ -20,6 +20,22 @@ In order to run this game, you need to:
 - Aquaint your self with knowledge on how console games work
 - Install the game using the main executble file
 - Two players
+
+### Starting and Ending the game:
+#### Starting:
+##### Windows users
+    - Open the windows console using window + r
+    - Type cmd in the run space proveded
+    - Clear screen with the cls command
+    - Type main (The executable file) for the game to start
+##### Mac/Linux users
+    - Open the terminal
+    - Make sure you are in the directory where the game is
+    - Type main (The executable file) the will start
+
+#### Exiting:
+    To end the game, just exit the Termial/Console
+
 ### Playing Tic-Tac-Toe
 - The game will prompt the first player in put their character ie "X" or "O" which is in this case termed as a move
 - The second user will be prompted to
