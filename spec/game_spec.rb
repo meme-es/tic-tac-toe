@@ -8,9 +8,13 @@ RSpec.describe Game do
   let(:player) { Player.new('Manuel', 'X') }
 
   describe '#move' do
-    context 'when the method is called' do
-      it 'sets a bunch of variables according to comparisons and returns nil always' do
-        expect(game.move(player, 5)).to be(nil)
+    let(:board) { String.new("\n -------------\n | 1 | 2 | 3 |\n -------------\n | 4 | X | 6 |") }
+
+    context 'when the method is called given a Player object and a number' do
+      it 'changes the board status' do
+        board.concat("\n -------------\n | 7 | 8 | 9 |\n -------------\n\n")
+        game.move(player, 5)
+        expect(game.board).to eq(board)
       end
     end
   end
@@ -29,15 +33,21 @@ RSpec.describe Game do
   end
 
   describe '#board' do
-    context 'when the method is called' do
-      it 'returns a string with the current board status' do
-        expect(game.board).to be_an_instance_of(String)
+    let(:initial_board) { String.new("\n -------------\n | 1 | 2 | 3 |\n -------------\n | 4 | 5 | 6 |") }
+    let(:after_move_board) { String.new("\n -------------\n | 1 | 2 | 3 |\n -------------\n | 4 | X | 6 |") }
+
+    context 'when the method is called without any movement' do
+      it 'returns a string with the initial state of the board' do
+        initial_board.concat("\n -------------\n | 7 | 8 | 9 |\n -------------\n\n")
+        expect(game.board).to eq(initial_board)
       end
     end
 
-    context 'when the method is called' do
-      it "doesn't return another instance than a String with the current board status" do
-        expect(game.board).not_to be_an_instance_of(Integer)
+    context 'when the method is called after a movement' do
+      it 'returns a string with the current board state after that movement' do
+        game.move(player, 5)
+        after_move_board.concat("\n -------------\n | 7 | 8 | 9 |\n -------------\n\n")
+        expect(game.board).to eq(after_move_board)
       end
     end
   end
@@ -73,7 +83,7 @@ RSpec.describe Game do
         game.move(player, 1)
         game.move(player, 5)
         game.move(player, 9)
-        expect(game.result).to be_an_instance_of(String)
+        expect(game.result).to eq('Game over: Manuel with symbol X has won')
       end
     end
   end

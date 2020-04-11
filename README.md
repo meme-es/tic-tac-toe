@@ -30,7 +30,7 @@ This versión of the game was created using Ruby language in an interactive comm
 
 Once you have Ruby installed and clone this project you can start a game running the next command.
 
-```Ruby
+```
 ruby ./bin/main
 ```
 
