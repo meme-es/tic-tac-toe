@@ -69,7 +69,7 @@ class UserInterface
 
   def keep_playing?
     loop do
-      print 'Do you Want keep playing y/n: '
+      print 'Do you want keep playing y/n: '
       answ = gets.chomp
       return true if answ.upcase == 'Y'
       return false if answ.upcase == 'N'
