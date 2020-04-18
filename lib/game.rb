@@ -1,5 +1,5 @@
 class Game
-  attr_reader :result
+  attr_reader :result, :moves
 
   def initialize
     @moves = 0
