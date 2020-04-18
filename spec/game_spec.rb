@@ -66,3 +66,31 @@ RSpec.describe UserInterface do
         end
     end
 end
+
+RSpec.describe Player do
+    let(:new_player) { Player.new('lillian', 'X') }
+  
+    describe '#name' do
+        context 'User details' do
+            it 'returns the user name' do
+                expect(new_player.name).to be_an_instance_of(String)
+            end
+        end
+    end
+
+    describe '#character' do
+        context 'Player\'s symbol' do
+            it 'returns the symbol for the player' do
+                expect(new_player.character).to be_an_instance_of(String)
+            end
+        end
+    end
+
+    describe '#score' do
+        context 'Score returns the score value' do
+            it 'returns the integer value of the score' do
+                expect(new_player.score).to be_an_instance_of(Integer)
+            end
+        end
+    end
+end
