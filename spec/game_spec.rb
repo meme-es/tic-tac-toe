@@ -7,8 +7,6 @@ RSpec.describe Game do
 
     let(:new_game) {Game.new}
     let(:new_player) {Player.new('Lillian A', 'X')}
-    # let(:board) { String.new("\n -------------\n | 1 | 2 | 3 |\n -------------\n | 4 | 5 | 6 |") }
-    # let(:board2) { String.new("\n -------------\n | 1 | 2 | 3 |\n -------------\n | 4 | X | 6 |") }
     
     describe '#start_game' do
         context 'Game initialisation' do
@@ -53,6 +51,17 @@ RSpec.describe Game do
                 new_game.move(new_player, 1)
                 new_game.move(new_player, 9)
                 expect(new_game.ended?).to eql(true)
+            end
+        end
+    end
+end
+
+RSpec.describe UserInterface do
+    let(:ui) { UserInterface.new }
+    describe '#player' do
+        context 'call method play' do
+            it 'returns nil for each call' do
+                expect(ui.play).to eql(nil)
             end
         end
     end
